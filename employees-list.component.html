@@ -1,0 +1,39 @@
+<div class='table-responsive'>
+    <div class='table'>
+ 
+    
+    
+  <!-- <button type="button" class="btn1 btn btn-primary float-left">Add New Employee</button> -->
+
+
+
+<table datatable class="table row-border hover" >
+    <thead>
+      <tr>
+        <th>UserId</th>
+        <th>First Name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of _users">
+        <td> {{ user.userId}}</td>
+        <td>  <a [routerLink]="['/user', user.userId]" >
+        {{user.firstName}}
+      </a>
+    </td>
+       
+        <td> {{ user.lastName}}</td>
+        <td> {{ user.email}}</td>
+        <td>{{user.actions}}
+            <a [routerLink] = "['/user',user.userId ]" class="btn btn-success">Edit</a> 
+            <!-- <a class="btn btn-danger">Update</a> -->
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
